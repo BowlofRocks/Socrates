@@ -1,6 +1,6 @@
 using System;
 
-namespace socrates;
+namespace Socrates;
 
 
 {

@@ -1,6 +1,6 @@
-using system;
+using System;
 
-namespace socrates;
+namespace Socrates;
 
 using System.Collections.Generic;
 using Raylib_cs;

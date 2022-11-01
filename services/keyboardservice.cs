@@ -1,6 +1,6 @@
 using System;
 using Raylib_cs;
-namespace socrates;
+namespace Socrates;
 
 
 {
