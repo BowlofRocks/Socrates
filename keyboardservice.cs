@@ -1,0 +1,3 @@
+using system;
+
+namespace socrates;
