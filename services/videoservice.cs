@@ -1,13 +1,11 @@
 using System;
 
-namespace Socrates;
-
 using System.Collections.Generic;
 using Raylib_cs;
 using Unit04.Game.Casting;
 
 
-namespace Unit04.Game.Services
+namespace Socrates
 {
     /// <summary>
     /// <para>Outputs the game state.</para>
