@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace socrates;
+namespace Socrates;
 
 public class play_the_robot_game
 {
