@@ -1,9 +1,7 @@
+using System;
 using Raylib_cs;
-using Unit04.Game.Casting;
+namespace Socrates;
 
-
-namespace Unit04.Game.Services
-{
     /// <summary>
     /// <para>Detects player input.</para>
     /// <para>
@@ -59,4 +57,3 @@ namespace Unit04.Game.Services
             return direction;
         }
     }
-}

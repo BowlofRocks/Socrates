@@ -1,8 +1,12 @@
+// using system;
+
+// namespace socrates;
+
+
 using System;
 
 
-namespace Unit04.Game.Casting
-{
+namespace Socrates;
     /// <summary>
     /// <para>A thing that participates in the game.</para>
     /// <para>
@@ -157,4 +161,3 @@ namespace Unit04.Game.Casting
         }
 
     }
-}

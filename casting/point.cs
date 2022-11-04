@@ -1,5 +1,6 @@
-namespace Unit04.Game.Casting
-{
+using System;
+
+namespace Socrates;
     /// <summary>
     /// <para>A distance from a relative origin (0, 0).</para>
     /// <para>
@@ -75,4 +76,3 @@ namespace Unit04.Game.Casting
             return new Point(x, y);
         }
     }
-}
