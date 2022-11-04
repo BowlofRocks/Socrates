@@ -1,31 +1,5 @@
 using System;
-
 namespace Socrates;
-
-public class director
-{
-    //this class will bring together all the other classes to run the program
-
-    public void play_game
-    {
-        //this method will run run the game
-    }
-}
-
-
-
-
-
-
-
-
-using System.Collections.Generic;
-using Unit04.Game.Casting;
-using Unit04.Game.Services;
-
-
-namespace Unit04.Game.Directing
-{
     /// <summary>
     /// <para>A person who directs the game.</para>
     /// <para>
@@ -65,18 +39,18 @@ namespace Unit04.Game.Directing
         }
 
         /// <summary>
-        /// Gets directional input from the keyboard and applies it to the robot.
+        /// Gets directional input from the keyboard and applies it to the player.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
         {
-            Actor robot = cast.GetFirstActor("robot");
+            Actor player = cast.GetFirstActor("player");
             Point velocity = _keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            player.SetVelocity(velocity);     
         }
 
         /// <summary>
-        /// Updates the robot's position and resolves any collisions with artifacts.
+        /// Updates the player's position and resolves any collisions with artifacts.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
@@ -88,7 +62,7 @@ namespace Unit04.Game.Directing
             banner.SetText("");
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
-            robot.MoveNext(maxX, maxY);
+            player.MoveNext(maxX, maxY);
 
  
         }
@@ -106,4 +80,3 @@ namespace Unit04.Game.Directing
         }
 
     }
-}

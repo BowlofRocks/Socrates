@@ -1,8 +1,3 @@
-// using system;
-
-// namespace socrates;
-
-
 using System;
 
 

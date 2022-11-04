@@ -1,8 +1,8 @@
-using System;
 using Raylib_cs;
-namespace Socrates;
+using Unit04.Game.Casting;
 
 
+namespace Unit04.Game.Services
 {
     /// <summary>
     /// <para>Detects player input.</para>

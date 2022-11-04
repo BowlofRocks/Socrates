@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
 
-namespace Socrates
-{
+namespace Socrates;
+
     /// <summary>
     /// <para>A collection of actors.</para>
     /// <para>
@@ -100,4 +100,3 @@ namespace Socrates
         }
 
     }
-}

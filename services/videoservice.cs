@@ -2,11 +2,8 @@ using System;
 
 using System.Collections.Generic;
 using Raylib_cs;
-using Unit04.Game.Casting;
+namespace Socrates;
 
-
-namespace Socrates
-{
     /// <summary>
     /// <para>Outputs the game state.</para>
     /// <para>
@@ -69,7 +66,7 @@ namespace Socrates
             int x = actor.GetPosition().GetX();
             int y = actor.GetPosition().GetY();
             int fontSize = actor.GetFontSize();
-            Casting.Color c = actor.GetColor();
+            Color c = actor.GetColor();
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
         }
@@ -160,7 +157,7 @@ namespace Socrates
         /// </summary>
         /// <param name="color">The color to convert.</param>
         /// <returns>A Raylib color.</returns>
-        private Raylib_cs.Color ToRaylibColor(Casting.Color color)
+        private Raylib_cs.Color ToRaylibColor(Color color)
         {
             int r = color.GetRed();
             int g = color.GetGreen();
@@ -170,4 +167,3 @@ namespace Socrates
         }
 
     }
-}

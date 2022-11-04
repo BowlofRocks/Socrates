@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace Socrates
+namespace Unit04.Game.Casting
 {
     /// <summary>
     /// <para>A color.</para>
