@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using Unit04.Game.Casting;
 using Unit04.Game.Services;
 
@@ -44,41 +44,69 @@ namespace Unit04.Game.Directing
         }
 
         /// <summary>
-        /// Gets directional input from the keyboard and applies it to the robot.
+        /// Gets directional input from the keyboard and applies it to the miner.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void GetInputs(Cast cast)
         {
-            Actor robot = cast.GetFirstActor("robot");
+            Actor miner = cast.GetFirstActor("miner");
             Point velocity = _keyboardService.GetDirection();
             velocity = new Point (velocity.GetX(), 0);
-            robot.SetVelocity(velocity);     
+            miner.SetVelocity(velocity);
         }
 
         /// <summary>
-        /// Updates the robot's position and resolves any collisions with artifacts.
+        /// Updates the miner's position and resolves any collisions with artifacts.
         /// </summary>
         /// <param name="cast">The given cast.</param>
         private void DoUpdates(Cast cast)
         {
             Actor banner = cast.GetFirstActor("banner");
-            Actor robot = cast.GetFirstActor("robot");
-            List<Actor> artifacts = cast.GetActors("artifacts");
+            Actor miner = cast.GetFirstActor("miner");
+            
+            
 
-            banner.SetText("");
+            banner.SetText("Score ");
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
-            robot.MoveNext(maxX, maxY);
+            miner.MoveNext(maxX, maxY);
 
-            foreach (Actor actor in artifacts)
+            // Creation of Falling obj
+            // Randomizing spots
+
+            Random random = new Random();
+            int randomX = random.Next(1, 60);
+            int numOfFO = random.Next(10);
+
+            for (int i = 0; i < numFO; i++)
             {
-                if (robot.GetPosition().Equals(actor.GetPosition()))
+                FallingObject f = new FallingObject();
+                f.SetScore(someRandomNumber);
+                f.SetText(eitherRockOrGemChar);
+                f.SetPosition(new Point(randomX, 0));
+                f.SetVelocity(new Point(0, 3));
+                cast.AddActor("fallingObjects", f);
+            }
+            
+            foreach (Actor fallingObject in fallingObjects)
+            {
+                if (miner.GetPosition().Equals(fallingObject.GetPosition()))
                 {
-                    Artifact artifact = (Artifact) actor;
-                    string message = artifact.GetMessage();
-                    banner.SetText(message);
+                FallingObject rockOrGem = (FallingObject) fallingObject;
+                    int score = fallingObject.GetScore();  
+                    _total += score;
+                    banner.SetText($"Score {_total}");
+                    cast.RemoveActor(fallingObject);
                 }
-            } 
+            }
+
+            foreach (Actor fallingObject in fallingObjects)
+            {
+                if (fallingObject.GetPosition().GetY() == MAX_Y))
+                {
+                cast.RemoveActor(fallingObject);
+                }
+            }
         }
 
         /// <summary>

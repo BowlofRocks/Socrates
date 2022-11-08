@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace Unit04
         private static int FONT_SIZE = 15;
         private static int COLS = 60;
         private static int ROWS = 40;
-        private static string CAPTION = "Robot Finds Kitten";
+        private static string CAPTION = "miner Finds Kitten";
         private static string DATA_PATH = "Data/messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
@@ -35,6 +35,8 @@ namespace Unit04
         {
             // create the cast
             Cast cast = new Cast();
+            List<Actor> fallingObjects = cast.GetAllActors("fallingObjects");
+
 
             // create the banner
             Actor banner = new Actor();
@@ -44,13 +46,13 @@ namespace Unit04
             banner.SetPosition(new Point(CELL_SIZE, 0));
             cast.AddActor("banner", banner);
 
-            // create the robot
-            Actor robot = new Actor();
-            robot.SetText("#");
-            robot.SetFontSize(FONT_SIZE);
-            robot.SetColor(WHITE);
-            robot.SetPosition(new Point(MAX_X / 2, MAX_Y - CELL_SIZE));
-            cast.AddActor("robot", robot);
+            // create the miner
+            Actor miner = new Actor();
+            miner.SetText("#");
+            miner.SetFontSize(FONT_SIZE);
+            miner.SetColor(WHITE);
+            miner.SetPosition(new Point(MAX_X / 2, MAX_Y / CELL_SIZE));
+            cast.AddActor("miner", miner);
 
             // load the messages
             List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
