@@ -1,7 +1,7 @@
 using System;
 using Unit04.Game.Casting;
 using Unit04.Game.Services;
-
+using System.Collections.Generic;
 
 namespace Unit04.Game.Directing
 {
@@ -15,6 +15,9 @@ namespace Unit04.Game.Directing
     {
         private KeyboardService _keyboardService = null;
         private VideoService _videoService = null;
+
+        private int _total = 0;
+        private int numFO = 10;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -76,35 +79,37 @@ namespace Unit04.Game.Directing
 
             Random random = new Random();
             int randomX = random.Next(1, 60);
+            Point start = new Point(randomX,0);
+            start.Scale(15);
             int numOfFO = random.Next(10);
 
             for (int i = 0; i < numFO; i++)
             {
                 FallingObject f = new FallingObject();
-                f.SetScore(someRandomNumber);
-                f.SetText(eitherRockOrGemChar);
-                f.SetPosition(new Point(randomX, 0));
+                f.SetScore("Rock"); // //////
+                f.SetPosition(start);
                 f.SetVelocity(new Point(0, 3));
                 cast.AddActor("fallingObjects", f);
             }
-            
-            foreach (Actor fallingObject in fallingObjects)
+            List<Actor> fallingObjects = cast.GetActors("fallingObjects");
+            foreach (Actor actor in fallingObjects)
             {
-                if (miner.GetPosition().Equals(fallingObject.GetPosition()))
+                actor.MoveNext(maxX,maxY);
+                if (miner.GetPosition().Equals(actor.GetPosition()))
                 {
-                FallingObject rockOrGem = (FallingObject) fallingObject;
-                    int score = fallingObject.GetScore();  
+                FallingObject fallingObject = (FallingObject) actor;
+                    int score = fallingObject.GetValue();  
                     _total += score;
                     banner.SetText($"Score {_total}");
-                    cast.RemoveActor(fallingObject);
+                    cast.RemoveActor("fallingObjects", fallingObject);
                 }
             }
 
             foreach (Actor fallingObject in fallingObjects)
             {
-                if (fallingObject.GetPosition().GetY() == MAX_Y))
+                if (fallingObject.GetPosition().GetY() == 900)
                 {
-                cast.RemoveActor(fallingObject);
+                cast.RemoveActor("fallingObjects", fallingObject);
                 }
             }
         }

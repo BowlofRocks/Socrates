@@ -1,0 +1,5 @@
+C:\Users\Derek's Laptop\VS Coding\CSE 210 Assignments & Pictures\Socrates\obj\Debug\net6.0\Socrates.csproj.AssemblyReference.cache
+C:\Users\Derek's Laptop\VS Coding\CSE 210 Assignments & Pictures\Socrates\obj\Debug\net6.0\Socrates.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Derek's Laptop\VS Coding\CSE 210 Assignments & Pictures\Socrates\obj\Debug\net6.0\Socrates.AssemblyInfoInputs.cache
+C:\Users\Derek's Laptop\VS Coding\CSE 210 Assignments & Pictures\Socrates\obj\Debug\net6.0\Socrates.AssemblyInfo.cs
+C:\Users\Derek's Laptop\VS Coding\CSE 210 Assignments & Pictures\Socrates\obj\Debug\net6.0\Socrates.csproj.CoreCompileInputs.cache

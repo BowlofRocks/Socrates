@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj": {}
+    "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Socrates.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj": {
+    "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Socrates.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj",
-        "projectName": "Unit04",
-        "projectPath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj",
+        "projectUniqueName": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Socrates.csproj",
+        "projectName": "Socrates",
+        "projectPath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Socrates.csproj",
         "packagesPath": "C:\\Users\\Derek's Laptop\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\obj\\",
         "projectStyle": "PackageReference",

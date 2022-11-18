@@ -35,7 +35,7 @@ namespace Unit04
         {
             // create the cast
             Cast cast = new Cast();
-            List<Actor> fallingObjects = cast.GetAllActors("fallingObjects");
+            // List<Actor> fallingObjects = cast.GetActors("fallingObjects");
 
 
             // create the banner
@@ -55,14 +55,14 @@ namespace Unit04
             cast.AddActor("miner", miner);
 
             // load the messages
-            List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
+            //List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
 
             // create the artifacts
             Random random = new Random();
             for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
             {
                 string text = ((char)random.Next(33, 126)).ToString();
-                string message = messages[i];
+                //string message = messages[i];
 
                 int x = random.Next(1, COLS);
                 int y = random.Next(1, ROWS);
@@ -79,7 +79,7 @@ namespace Unit04
                 artifact.SetFontSize(FONT_SIZE);
                 artifact.SetColor(color);
                 artifact.SetPosition(position);
-                artifact.SetMessage(message);
+                //artifact.SetMessage(message);
                 cast.AddActor("artifacts", artifact);
             }
 

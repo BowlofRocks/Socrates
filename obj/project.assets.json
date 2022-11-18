@@ -8,14 +8,10 @@
           "System.Numerics.Vectors": "4.5.0"
         },
         "compile": {
-          "lib/netstandard2.1/Raylib-cs.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/Raylib-cs.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Raylib-cs.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/Raylib-cs.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux-x64/native/libraylib.so": {
@@ -120,19 +116,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\apaul\\.nuget\\packages\\": {}
+    "C:\\Users\\Derek's Laptop\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CSE 210\\Socrates\\Unit04.csproj",
+      "projectUniqueName": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj",
       "projectName": "Unit04",
-      "projectPath": "C:\\CSE 210\\Socrates\\Unit04.csproj",
-      "packagesPath": "C:\\Users\\apaul\\.nuget\\packages\\",
-      "outputPath": "C:\\CSE 210\\Socrates\\obj\\",
+      "projectPath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj",
+      "packagesPath": "C:\\Users\\Derek's Laptop\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\apaul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Derek's Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -167,8 +163,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -177,7 +172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

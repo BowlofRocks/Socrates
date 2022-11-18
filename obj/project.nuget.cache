@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "633axosx44q7MkSDN8nNSxUnJUVXzo/w7L/LQAbuJodd4B0+UtFjZ45ehsLVbAXq2KILiM1QukO/BjOJEchuUg==",
+  "dgSpecHash": "Xeq24u0e006GGqo3fWABDSCAESfsv6U0Ad6TndU4y9ybLfc93P3F9gOSvlgf6DxNr9eP3zkpSZlYd4UyFMHtbQ==",
   "success": true,
-  "projectFilePath": "C:\\CSE 210\\Socrates\\Unit04.csproj",
+  "projectFilePath": "C:\\Users\\Derek's Laptop\\VS Coding\\CSE 210 Assignments & Pictures\\Socrates\\Unit04.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\apaul\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
-    "C:\\Users\\apaul\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Derek's Laptop\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\Derek's Laptop\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
