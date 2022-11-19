@@ -68,7 +68,7 @@ namespace Unit04.Game.Directing
             Actor miner = cast.GetFirstActor("miner");
             
             
-
+            
             banner.SetText("Score ");
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
@@ -78,15 +78,28 @@ namespace Unit04.Game.Directing
             // Randomizing spots
 
             Random random = new Random();
-            int randomX = random.Next(1, 60);
+
+
+            int randomX = random.Next(1, 1000);
             Point start = new Point(randomX,0);
             start.Scale(15);
             int numOfFO = random.Next(10);
 
             for (int i = 0; i < numFO; i++)
             {
+                int eitherRockOrGem = random.Next(1,2);
+
+                // if (randomNum == 1)
+                // {
+                //     eitherRockOrGemChar = "Rock";
+                // }
+                // else if (randomNum == 2)
+                // {
+                //     eitherRockOrGemChar = "Gem";
+                // }
+
                 FallingObject f = new FallingObject();
-                f.SetScore("Rock"); // //////
+                f.SetScore(eitherRockOrGem); /////// Using Random to generate Gem or Rock
                 f.SetPosition(start);
                 f.SetVelocity(new Point(0, 3));
                 cast.AddActor("fallingObjects", f);
@@ -95,9 +108,9 @@ namespace Unit04.Game.Directing
             foreach (Actor actor in fallingObjects)
             {
                 actor.MoveNext(maxX,maxY);
-                if (miner.GetPosition().Equals(actor.GetPosition()))
+                if (miner.GetPosition() == actor.GetPosition()) //  if (miner.GetPosition().Equals(actor.GetPosition()))
                 {
-                FallingObject fallingObject = (FallingObject) actor;
+                FallingObject fallingObject = (FallingObject) actor;/////Where score is calculated
                     int score = fallingObject.GetValue();  
                     _total += score;
                     banner.SetText($"Score {_total}");
@@ -105,7 +118,7 @@ namespace Unit04.Game.Directing
                 }
             }
 
-            foreach (Actor fallingObject in fallingObjects)
+            foreach (Actor fallingObject in fallingObjects) ///////
             {
                 if (fallingObject.GetPosition().GetY() == 900)
                 {

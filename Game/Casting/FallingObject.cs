@@ -9,17 +9,19 @@ namespace Unit04
         Random rd = new Random();
         private int ValueOfObject = 0;
         // Sets score per object.
-        public int SetScore(String someRandomNumber)
+        public int SetScore(int someRandomNumber)
         {
             
-            string FallenObject = someRandomNumber;
+            int FallenObject = someRandomNumber;
             
-            if (FallenObject == "Rock")
+            FallenObject = rd.Next(1,2);
+
+            if (FallenObject == 1)
                 {
                     ValueOfObject = rd.Next(-100,-1);
                     SetText("R");
                 }
-            else if (FallenObject == "Gem")
+            else if (FallenObject == 2)
                 {
                     ValueOfObject = rd.Next(1,100);
                     SetText("G");
