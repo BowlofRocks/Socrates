@@ -9,35 +9,45 @@ namespace Unit04
         Random rd = new Random();
         private int ValueOfObject = 0;
         // Sets score per object.
-        public int SetScore(int someRandomNumber)
+        public int GetValue()
         {
+            Random random = new Random();
+            int eitherRockOrGem = random.Next(1,100);
             
-            int FallenObject = someRandomNumber;
-            
-            FallenObject = rd.Next(1,2);
-
-            if (FallenObject == 1)
-                {
-                    ValueOfObject = rd.Next(-100,-1);
-                    SetText("R");
-                }
-            else if (FallenObject == 2)
-                {
-                    ValueOfObject = rd.Next(1,100);
-                    SetText("G");
-                }
-            else 
-                {
-                    Console.WriteLine($"Object is neither 'Rock' or 'Gem' and cannot gert a score assigned to it. Fallen Object is {FallenObject}");
-                }
+            if (eitherRockOrGem % 2 == 0)
+            {
+                ValueOfObject = rd.Next(-100, -1);
+            }
+            else
+            {
+                ValueOfObject = rd.Next(1, 100);
+            }
             return ValueOfObject;
+        }
+
+
+
+
+        public void SetShape(int objectPoints)
+        {
+
+            if (objectPoints > 0)
+                {
+                    
+                    Color color = new Color(0,0,255);
+                    SetText("G");
+                    SetColor(color);
+                }
+            else
+                {
+                    Color color = new Color(255,0,0);
+                    SetText("R");
+                    SetColor(color);
+                }
 
         }    
 
-        public int GetValue()
-        {
-            return ValueOfObject;
-        }
+
 
 
 //         public string SetText(string eitherRockOrGemChar) 

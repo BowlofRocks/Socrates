@@ -17,11 +17,11 @@ namespace Unit04
         private static int FRAME_RATE = 12;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
+        private static int CELL_SIZE = 25;
         private static int FONT_SIZE = 15;
         private static int COLS = 60;
         private static int ROWS = 40;
-        private static string CAPTION = "miner Finds Kitten";
+        private static string CAPTION = "Miner Finds Kitten";
         private static string DATA_PATH = "Data/messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
@@ -51,11 +51,34 @@ namespace Unit04
             miner.SetText("#");
             miner.SetFontSize(FONT_SIZE);
             miner.SetColor(WHITE);
-            miner.SetPosition(new Point(MAX_X / 2, MAX_Y / CELL_SIZE));
+            miner.SetPosition(new Point(MAX_X / 2, 500)); // Had to hard code this as it wasn't low enough and for some reason will go higher if y > 500. Don't ask me why but the code did it that way.
             cast.AddActor("miner", miner);
 
             // load the messages
             //List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
+
+            // Create the falling objects
+
+            FallingObject f = new FallingObject();
+            
+            Random rd = new Random();
+
+            
+            int numFO = rd.Next(1,2);
+
+            
+
+
+            // for (int i = 0; i < numFO; i++)
+            //     {
+            //         int eitherRockOrGem = rd.Next(1,100);
+                    
+
+
+
+            //         f.SetScore(eitherRockOrGem);
+            //     }
+
 
             // create the artifacts
             Random random = new Random();
@@ -74,13 +97,13 @@ namespace Unit04
                 int b = random.Next(0, 256);
                 Color color = new Color(r, g, b);
 
-                Artifact artifact = new Artifact();
-                artifact.SetText(text);
-                artifact.SetFontSize(FONT_SIZE);
-                artifact.SetColor(color);
-                artifact.SetPosition(position);
-                //artifact.SetMessage(message);
-                cast.AddActor("artifacts", artifact);
+                // Artifact artifact = new Artifact();
+            //     artifact.SetText(text);
+            //     artifact.SetFontSize(FONT_SIZE);
+            //     artifact.SetColor(color);
+            //     artifact.SetPosition(position);
+            //     artifact.SetMessage(message);
+            //     cast.AddActor("artifacts", artifact);
             }
 
             // start the game

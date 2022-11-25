@@ -66,10 +66,11 @@ namespace Unit04.Game.Directing
         {
             Actor banner = cast.GetFirstActor("banner");
             Actor miner = cast.GetFirstActor("miner");
+
             
             
             
-            banner.SetText("Score ");
+            //banner.SetText("Score ");
             int maxX = _videoService.GetWidth();
             int maxY = _videoService.GetHeight();
             miner.MoveNext(maxX, maxY);
@@ -83,34 +84,25 @@ namespace Unit04.Game.Directing
             int randomX = random.Next(1, 1000);
             Point start = new Point(randomX,0);
             start.Scale(15);
-            int numOfFO = random.Next(10);
+            int numOfFO = random.Next(1);
 
             for (int i = 0; i < numFO; i++)
             {
-                int eitherRockOrGem = random.Next(1,2);
-
-                // if (randomNum == 1)
-                // {
-                //     eitherRockOrGemChar = "Rock";
-                // }
-                // else if (randomNum == 2)
-                // {
-                //     eitherRockOrGemChar = "Gem";
-                // }
-
                 FallingObject f = new FallingObject();
-                f.SetScore(eitherRockOrGem); /////// Using Random to generate Gem or Rock
+                int objectPoints = f.GetValue();
+                int _objectPoints = objectPoints;
+                f.SetShape(objectPoints);
                 f.SetPosition(start);
-                f.SetVelocity(new Point(0, 3));
+                f.SetVelocity(new Point(0, 10)); 
                 cast.AddActor("fallingObjects", f);
             }
             List<Actor> fallingObjects = cast.GetActors("fallingObjects");
             foreach (Actor actor in fallingObjects)
             {
                 actor.MoveNext(maxX,maxY);
-                if (miner.GetPosition() == actor.GetPosition()) //  if (miner.GetPosition().Equals(actor.GetPosition()))
+                if (miner.GetPosition().Equals(actor.GetPosition()))
                 {
-                FallingObject fallingObject = (FallingObject) actor;/////Where score is calculated
+                FallingObject fallingObject = (FallingObject) actor; ///// Where score is calculated
                     int score = fallingObject.GetValue();  
                     _total += score;
                     banner.SetText($"Score {_total}");
@@ -118,11 +110,11 @@ namespace Unit04.Game.Directing
                 }
             }
 
-            foreach (Actor fallingObject in fallingObjects) ///////
+            foreach (Actor fallingObject in fallingObjects) 
             {
                 if (fallingObject.GetPosition().GetY() == 900)
                 {
-                cast.RemoveActor("fallingObjects", fallingObject);
+                   cast.RemoveActor("fallingObjects", fallingObject);
                 }
             }
         }
