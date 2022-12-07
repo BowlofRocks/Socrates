@@ -31,17 +31,17 @@ namespace Unit04
         public void SetShape(int objectPoints)
         {
 
-            if (objectPoints > 0)
+            if (objectPoints > 0) //gems
                 {
                     
                     Color color = new Color(0,0,255);
-                    SetText("G");
+                    SetText("*");
                     SetColor(color);
                 }
-            else
+            else // Rock
                 {
                     Color color = new Color(255,0,0);
-                    SetText("R");
+                    SetText("o");
                     SetColor(color);
                 }
 
